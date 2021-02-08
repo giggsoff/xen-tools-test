@@ -1,0 +1,13 @@
+#cloud-config
+# vim:syntax=yaml
+users:
+  - default
+  - name: ubuntu
+    groups: sudo
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    plain_text_passwd: passw0rd
+    lock_passwd: false
+chpasswd:
+  list: |
+     ubuntu:passw0rd
+  expire: False
